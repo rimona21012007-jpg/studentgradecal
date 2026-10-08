@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
-import { Plus, ChevronDown, ChevronUp, Trash2, Copy, Edit2, AlertCircle } from 'lucide-react'
+import { Plus, ChevronDown, ChevronUp, Trash2, Copy, Edit2, AlertCircle, ArrowRight } from 'lucide-react'
+import { motion, AnimatePresence } from 'framer-motion'
 import * as Dialog from '@radix-ui/react-dialog'
 import * as Tooltip from '@radix-ui/react-tooltip'
 import { useStore } from '@/store'
@@ -135,13 +136,63 @@ export function CoursesTable({ profile, semester }: Props) {
                       <td style={{ textAlign: 'right', fontFamily: 'var(--font-mono)' }}>
                         {course.isZeroCredit ? '0' : course.credits}
                       </td>
-                      <td style={{ textAlign: 'right', fontFamily: 'var(--font-mono)' }}>
-                        {grade.percentage !== null ? `${formatNumber(grade.percentage, 1)}%` : '—'}
+                      <td style={{ textAlign: 'right', fontFamily: 'var(--font-mono)' }} onClick={(e) => e.stopPropagation()}>
+                        {course.assessments.length === 0 ? (
+                          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-end', gap: 4 }}>
+                            <input
+                              className="input input-sm"
+                              placeholder="Score/100"
+                              style={{ width: 85, textAlign: 'right', fontSize: 'var(--text-xs)', height: 26 }}
+                              onKeyDown={(e) => {
+                                if (e.key === 'Enter') {
+                                  const val = parseFloat(e.currentTarget.value)
+                                  if (!isNaN(val)) {
+                                    useStore.getState().createAssessment(profile.id, semester.id, course.id, {
+                                      name: 'Final Mark',
+                                      weight: 100,
+                                      score: val,
+                                      maxScore: 100,
+                                    })
+                                  }
+                                }
+                              }}
+                            />
+                            <Tooltip.Root>
+                              <Tooltip.Trigger asChild>
+                                <div style={{ color: 'var(--text-3)' }}><ArrowRight size={14} /></div>
+                              </Tooltip.Trigger>
+                              <Tooltip.Portal>
+                                <Tooltip.Content className="tooltip-content" sideOffset={5}>
+                                  Press Enter to save
+                                </Tooltip.Content>
+                              </Tooltip.Portal>
+                            </Tooltip.Root>
+                          </div>
+                        ) : (
+                          grade.percentage !== null ? `${formatNumber(grade.percentage, 1)}%` : '—'
+                        )}
                       </td>
                       <td style={{ textAlign: 'center' }}>
-                        <span className={`${gradeColor(grade.letter)}`} style={{ fontWeight: 600, fontSize: 'var(--text-sm)' }}>
-                          {grade.letter}
-                        </span>
+                        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 6 }}>
+                          <span className={`${gradeColor(grade.letter)}`} style={{ fontWeight: 600, fontSize: 'var(--text-sm)' }}>
+                            {grade.letter}
+                          </span>
+                          <AnimatePresence mode="wait">
+                            {grade.percentage !== null && system.id === 'cgpa10' && (
+                              <motion.span
+                                key={grade.points > 0 ? 'pass' : 'fail'}
+                                initial={{ opacity: 0, scale: 0.5, y: -5 }}
+                                animate={{ opacity: 1, scale: 1, y: 0 }}
+                                exit={{ opacity: 0, scale: 0.5, y: 5 }}
+                                transition={{ type: 'spring', stiffness: 400, damping: 20 }}
+                                className={`badge ${grade.points > 0 ? 'badge-success' : 'badge-danger'}`}
+                                style={{ fontSize: '0.6rem', padding: '1px 5px', fontWeight: 700 }}
+                              >
+                                {grade.points > 0 ? 'PASS' : 'FAIL'}
+                              </motion.span>
+                            )}
+                          </AnimatePresence>
+                        </div>
                       </td>
                       <td style={{ textAlign: 'right', fontFamily: 'var(--font-mono)', color: 'var(--text-2)' }}>
                         {formatNumber(grade.gradePoints)}
