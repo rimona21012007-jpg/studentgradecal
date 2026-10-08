@@ -5,6 +5,7 @@ import { CoursesTable } from '@/features/courses/CoursesTable'
 import { SummaryPanel } from '@/features/courses/SummaryPanel'
 import { PlannerView } from '@/features/planner/PlannerView'
 import { InsightsView } from '@/features/insights/InsightsView'
+import { ProgressReportView } from '@/features/insights/ProgressReportView'
 import { GradingSystemSelector } from './GradingSystemSelector'
 
 export function MainWorkspace() {
@@ -66,6 +67,7 @@ export function MainWorkspace() {
             <Tabs.Trigger className="tab-trigger" value="courses">Courses</Tabs.Trigger>
             <Tabs.Trigger className="tab-trigger" value="planner">Planner</Tabs.Trigger>
             <Tabs.Trigger className="tab-trigger" value="insights">Insights</Tabs.Trigger>
+            <Tabs.Trigger className="tab-trigger" value="report">Progress Report</Tabs.Trigger>
           </Tabs.List>
         </div>
 
@@ -82,6 +84,10 @@ export function MainWorkspace() {
 
         <Tabs.Content value="insights" style={{ flex: 1, overflow: 'auto' }}>
           <InsightsView profile={activeProfile} />
+        </Tabs.Content>
+
+        <Tabs.Content value="report" style={{ flex: 1, overflow: 'auto' }}>
+          <ProgressReportView profile={activeProfile} />
         </Tabs.Content>
       </Tabs.Root>
     </div>
