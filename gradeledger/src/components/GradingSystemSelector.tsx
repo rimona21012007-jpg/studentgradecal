@@ -19,7 +19,7 @@ export function GradingSystemSelector({ profileId }: Props) {
   return (
     <Select.Root
       value={profile.gradingSystemId}
-      onValueChange={(v) => updateProfile(profileId, { gradingSystemId: v })}
+      onValueChange={() => {}}
     >
       <Select.Trigger className="select-trigger" aria-label="Select grading system">
         <Select.Value />

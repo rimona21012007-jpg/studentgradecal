@@ -12,7 +12,7 @@ interface Props {
 
 export function AddCourseDialog({ open, onClose, profileId, semesterId }: Props) {
   const createCourse = useStore((s) => s.createCourse)
-  const allSystems = useStore((s) => [...s.customGradingSystems])
+  const allSystems = useStore((s) => s.customGradingSystems)
   const profile = useStore((s) => s.profiles.find((p) => p.id === profileId))
 
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {

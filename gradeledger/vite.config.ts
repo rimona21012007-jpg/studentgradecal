@@ -10,6 +10,7 @@ const __dirname = dirname(__filename)
 
 export default defineConfig({
   base: '/studentgradecal/',
+  build: { minify: true },
   plugins: [
     react(),
     tailwindcss(),

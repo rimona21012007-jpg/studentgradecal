@@ -147,68 +147,64 @@ export function CoursesTable({ profile, semester }: Props) {
                         {formatNumber(grade.gradePoints)}
                       </td>
                       <td style={{ textAlign: 'right' }}>
-                        <Tooltip.Provider>
-                          <Tooltip.Root>
-                            <Tooltip.Trigger asChild>
-                              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-end', gap: 4 }}>
-                                <div className="weight-bar" style={{ width: 40 }}>
-                                  <div
-                                    className="weight-bar-fill"
-                                    style={{
-                                      width: `${Math.min(grade.completedWeight, 100)}%`,
-                                      background: weightOk ? 'var(--success)' : grade.completedWeight > 100 ? 'var(--danger)' : 'var(--accent)',
-                                    }}
-                                  />
-                                </div>
-                                <span style={{ fontSize: 'var(--text-xs)', color: 'var(--text-3)', fontFamily: 'var(--font-mono)', width: 30 }}>
-                                  {grade.totalWeight}%
-                                </span>
-                                {!weightOk && grade.totalWeight > 0 && (
-                                  <AlertCircle size={12} style={{ color: 'var(--warning)' }} />
-                                )}
+                        <Tooltip.Root>
+                          <Tooltip.Trigger asChild>
+                            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-end', gap: 4 }}>
+                              <div className="weight-bar" style={{ width: 40 }}>
+                                <div
+                                  className="weight-bar-fill"
+                                  style={{
+                                    width: `${Math.min(grade.completedWeight, 100)}%`,
+                                    background: weightOk ? 'var(--success)' : grade.completedWeight > 100 ? 'var(--danger)' : 'var(--accent)',
+                                  }}
+                                />
                               </div>
-                            </Tooltip.Trigger>
-                            <Tooltip.Portal>
-                              <Tooltip.Content className="tooltip-content" sideOffset={5}>
-                                Total weight: {grade.totalWeight}% (should be 100%)
-                              </Tooltip.Content>
-                            </Tooltip.Portal>
-                          </Tooltip.Root>
-                        </Tooltip.Provider>
+                              <span style={{ fontSize: 'var(--text-xs)', color: 'var(--text-3)', fontFamily: 'var(--font-mono)', width: 30 }}>
+                                {grade.totalWeight}%
+                              </span>
+                              {!weightOk && grade.totalWeight > 0 && (
+                                <AlertCircle size={12} style={{ color: 'var(--warning)' }} />
+                              )}
+                            </div>
+                          </Tooltip.Trigger>
+                          <Tooltip.Portal>
+                            <Tooltip.Content className="tooltip-content" sideOffset={5}>
+                              Total weight: {grade.totalWeight}% (should be 100%)
+                            </Tooltip.Content>
+                          </Tooltip.Portal>
+                        </Tooltip.Root>
                       </td>
                       <td>
                         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-end', gap: 2 }} onClick={(e) => e.stopPropagation()}>
-                          <Tooltip.Provider>
-                            <Tooltip.Root>
-                              <Tooltip.Trigger asChild>
-                                <button
-                                  className="btn btn-ghost btn-icon btn-sm"
-                                  onClick={() => duplicateCourse(profile.id, semester.id, course.id)}
-                                  aria-label="Duplicate course"
-                                >
-                                  <Copy size={12} />
-                                </button>
-                              </Tooltip.Trigger>
-                              <Tooltip.Portal>
-                                <Tooltip.Content className="tooltip-content" sideOffset={5}>Duplicate</Tooltip.Content>
-                              </Tooltip.Portal>
-                            </Tooltip.Root>
-                            <Tooltip.Root>
-                              <Tooltip.Trigger asChild>
-                                <button
-                                  className="btn btn-ghost btn-icon btn-sm"
-                                  onClick={() => deleteCourse(profile.id, semester.id, course.id)}
-                                  aria-label="Delete course"
-                                  style={{ color: 'var(--danger)' }}
-                                >
-                                  <Trash2 size={12} />
-                                </button>
-                              </Tooltip.Trigger>
-                              <Tooltip.Portal>
-                                <Tooltip.Content className="tooltip-content" sideOffset={5}>Delete</Tooltip.Content>
-                              </Tooltip.Portal>
-                            </Tooltip.Root>
-                          </Tooltip.Provider>
+                          <Tooltip.Root>
+                            <Tooltip.Trigger asChild>
+                              <button
+                                className="btn btn-ghost btn-icon btn-sm"
+                                onClick={() => duplicateCourse(profile.id, semester.id, course.id)}
+                                aria-label="Duplicate course"
+                              >
+                                <Copy size={12} />
+                              </button>
+                            </Tooltip.Trigger>
+                            <Tooltip.Portal>
+                              <Tooltip.Content className="tooltip-content" sideOffset={5}>Duplicate</Tooltip.Content>
+                            </Tooltip.Portal>
+                          </Tooltip.Root>
+                          <Tooltip.Root>
+                            <Tooltip.Trigger asChild>
+                              <button
+                                className="btn btn-ghost btn-icon btn-sm"
+                                onClick={() => deleteCourse(profile.id, semester.id, course.id)}
+                                aria-label="Delete course"
+                                style={{ color: 'var(--danger)' }}
+                              >
+                                <Trash2 size={12} />
+                              </button>
+                            </Tooltip.Trigger>
+                            <Tooltip.Portal>
+                              <Tooltip.Content className="tooltip-content" sideOffset={5}>Delete</Tooltip.Content>
+                            </Tooltip.Portal>
+                          </Tooltip.Root>
                         </div>
                       </td>
                     </tr>

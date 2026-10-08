@@ -65,7 +65,6 @@ export function Topbar() {
         </button>
 
         {/* Undo/Redo */}
-        <Tooltip.Provider>
           <Tooltip.Root>
             <Tooltip.Trigger asChild>
               <button
@@ -103,7 +102,6 @@ export function Topbar() {
               </Tooltip.Content>
             </Tooltip.Portal>
           </Tooltip.Root>
-        </Tooltip.Provider>
 
         {/* Theme toggle */}
         <DropdownMenu.Root>
