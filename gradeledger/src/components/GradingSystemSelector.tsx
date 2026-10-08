@@ -10,7 +10,8 @@ interface Props {
 
 export function GradingSystemSelector({ profileId }: Props) {
   const profile = useStore((s) => s.profiles.find((p) => p.id === profileId))
-  const allSystems = useStore(selectAllGradingSystems)
+  const customSystems = useStore((s) => s.customGradingSystems)
+  const allSystems = [...GRADING_SYSTEMS, ...customSystems]
   const updateProfile = useStore((s) => s.updateProfile)
 
   if (!profile) return null
