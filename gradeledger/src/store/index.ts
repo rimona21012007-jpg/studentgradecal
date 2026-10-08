@@ -88,7 +88,7 @@ interface AppState {
 
 const DEFAULT_SETTINGS: AppSettings = {
   theme: 'system',
-  defaultGradingSystemId: 'gpa40',
+  defaultGradingSystemId: 'cgpa10',
   showCommandPalette: true,
   reducedMotion: false,
 }

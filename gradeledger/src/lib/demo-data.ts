@@ -6,7 +6,7 @@ export const DEMO_PROFILE: Profile = {
   name: 'Alex Johnson',
   institution: 'MIT',
   program: 'B.S. Computer Science',
-  gradingSystemId: 'gpa40',
+  gradingSystemId: 'cgpa10',
   createdAt: Date.now(),
   updatedAt: Date.now(),
   semesters: [
@@ -22,7 +22,7 @@ export const DEMO_PROFILE: Profile = {
           name: 'Introduction to Programming',
           code: 'CS101',
           credits: 4,
-          gradingSystemId: 'gpa40',
+          gradingSystemId: 'cgpa10',
           notes: '',
           isZeroCredit: false,
           assessments: [
@@ -36,7 +36,7 @@ export const DEMO_PROFILE: Profile = {
           name: 'Calculus I',
           code: 'MATH101',
           credits: 4,
-          gradingSystemId: 'gpa40',
+          gradingSystemId: 'cgpa10',
           notes: '',
           isZeroCredit: false,
           assessments: [
@@ -50,7 +50,7 @@ export const DEMO_PROFILE: Profile = {
           name: 'Physics I',
           code: 'PHYS101',
           credits: 3,
-          gradingSystemId: 'gpa40',
+          gradingSystemId: 'cgpa10',
           notes: '',
           isZeroCredit: false,
           assessments: [
@@ -64,7 +64,7 @@ export const DEMO_PROFILE: Profile = {
           name: 'Expository Writing',
           code: 'ENG101',
           credits: 3,
-          gradingSystemId: 'gpa40',
+          gradingSystemId: 'cgpa10',
           notes: '',
           isZeroCredit: false,
           assessments: [
@@ -86,7 +86,7 @@ export const DEMO_PROFILE: Profile = {
           name: 'Data Structures & Algorithms',
           code: 'CS201',
           credits: 4,
-          gradingSystemId: 'gpa40',
+          gradingSystemId: 'cgpa10',
           notes: '',
           isZeroCredit: false,
           assessments: [
@@ -100,7 +100,7 @@ export const DEMO_PROFILE: Profile = {
           name: 'Discrete Mathematics',
           code: 'MATH201',
           credits: 4,
-          gradingSystemId: 'gpa40',
+          gradingSystemId: 'cgpa10',
           notes: '',
           isZeroCredit: false,
           assessments: [
@@ -114,7 +114,7 @@ export const DEMO_PROFILE: Profile = {
           name: 'Computer Organization',
           code: 'CS210',
           credits: 3,
-          gradingSystemId: 'gpa40',
+          gradingSystemId: 'cgpa10',
           notes: '',
           isZeroCredit: false,
           assessments: [
@@ -137,7 +137,7 @@ export const DEMO_PROFILE: Profile = {
           name: 'Operating Systems',
           code: 'CS301',
           credits: 4,
-          gradingSystemId: 'gpa40',
+          gradingSystemId: 'cgpa10',
           notes: '',
           isZeroCredit: false,
           assessments: [
@@ -151,7 +151,7 @@ export const DEMO_PROFILE: Profile = {
           name: 'Database Systems',
           code: 'CS315',
           credits: 3,
-          gradingSystemId: 'gpa40',
+          gradingSystemId: 'cgpa10',
           notes: '',
           isZeroCredit: false,
           assessments: [
@@ -165,7 +165,7 @@ export const DEMO_PROFILE: Profile = {
           name: 'Machine Learning',
           code: 'CS350',
           credits: 4,
-          gradingSystemId: 'gpa40',
+          gradingSystemId: 'cgpa10',
           notes: '',
           isZeroCredit: false,
           assessments: [
