@@ -144,7 +144,7 @@ export function InsightsView({ profile }: Props) {
                     fontFamily: 'var(--font-ui)',
                     color: 'var(--text-1)',
                   }}
-                  formatter={(v: number) => [formatNumber(v), 'SGPA']}
+                  formatter={(v: any) => [formatNumber(Number(v)), 'SGPA']}
                 />
                 <Line
                   type="monotone"

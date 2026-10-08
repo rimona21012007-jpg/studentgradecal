@@ -6,7 +6,6 @@ import {
   calcWhatIfCgpa,
   calcTargetScore,
   getGradingSystem,
-  formatNumber as fmt,
   round2,
 } from '@/lib/grading'
 import { formatNumber } from '@/lib/utils'
