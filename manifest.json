@@ -1,0 +1,21 @@
+{
+  "name": "gradeledger",
+  "short_name": "GradeLedger",
+  "description": "Academic Grade Calculator — Track, calculate, and plan your GPA",
+  "start_url": "/gradeledger/",
+  "display": "standalone",
+  "background_color": "#0a0a0a",
+  "theme_color": "#0a0a0a",
+  "icons": [
+    {
+      "src": "/studentgradecal/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/studentgradecal/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
