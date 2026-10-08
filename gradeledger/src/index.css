@@ -29,10 +29,10 @@
   --text-2xl: 22px;
   --text-3xl: 28px;
 
-  /* Accent color — deep amber */
-  --accent: hsl(38 92% 50%);
-  --accent-dim: hsl(38 92% 50% / 0.12);
-  --accent-text: hsl(38 85% 38%);
+  /* Accent color — vibrant orange */
+  --accent: hsl(24 100% 55%);
+  --accent-dim: hsl(24 100% 55% / 0.12);
+  --accent-text: hsl(24 90% 45%);
 
   /* Motion */
   --dur-fast: 120ms;
@@ -48,31 +48,31 @@
 
 /* ── Light Theme ────────────────────────────────────────────────────────── */
 :root, [data-theme="light"] {
-  --bg-base: hsl(0 0% 99%);
-  --bg-subtle: hsl(0 0% 97%);
-  --bg-muted: hsl(0 0% 94%);
+  --bg-base: hsl(0 0% 100%);
+  --bg-subtle: hsl(215 25% 98%); /* very faint cool blue tint */
+  --bg-muted: hsl(215 20% 95%);
   --bg-overlay: hsl(0 0% 100%);
 
-  --border: hsl(0 0% 88%);
-  --border-strong: hsl(0 0% 78%);
+  --border: hsl(215 20% 90%);
+  --border-strong: hsl(215 20% 80%);
 
-  --text-1: hsl(0 0% 9%);
-  --text-2: hsl(0 0% 32%);
-  --text-3: hsl(0 0% 52%);
-  --text-4: hsl(0 0% 70%);
+  --text-1: hsl(220 40% 15%); /* Deep rich navy-black */
+  --text-2: hsl(220 25% 35%);
+  --text-3: hsl(220 20% 55%);
+  --text-4: hsl(220 15% 75%);
 
-  --sidebar-bg: hsl(0 0% 97%);
-  --sidebar-border: hsl(0 0% 90%);
+  --sidebar-bg: hsl(215 30% 97%); /* crisp cool sidebar */
+  --sidebar-border: hsl(215 20% 88%);
 
-  --row-hover: hsl(0 0% 96%);
-  --row-selected: hsl(38 92% 50% / 0.06);
+  --row-hover: hsl(215 30% 96%);
+  --row-selected: hsl(24 100% 55% / 0.08); /* faint orange selection */
 
-  --success: hsl(145 60% 35%);
-  --success-bg: hsl(145 60% 35% / 0.08);
-  --warning: hsl(32 90% 45%);
-  --warning-bg: hsl(32 90% 45% / 0.08);
-  --danger: hsl(0 72% 48%);
-  --danger-bg: hsl(0 72% 48% / 0.08);
+  --success: hsl(145 65% 38%);
+  --success-bg: hsl(145 65% 38% / 0.08);
+  --warning: hsl(38 95% 50%);
+  --warning-bg: hsl(38 95% 50% / 0.08);
+  --danger: hsl(350 80% 55%);
+  --danger-bg: hsl(350 80% 55% / 0.08);
 }
 
 /* ── Dark Theme ─────────────────────────────────────────────────────────── */
