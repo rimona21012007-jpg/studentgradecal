@@ -144,9 +144,15 @@ describe('percentageToGradePoint (10-point CGPA)', () => {
     expect(points).toBe(9)
   })
 
-  it('maps 40% to U (0) — fail', () => {
+  it('maps 40% to P (4) — pass', () => {
     const { letter, points } = percentageToGradePoint(40, cgpa10.scale)
-    expect(letter).toBe('U')
+    expect(letter).toBe('P')
+    expect(points).toBe(4)
+  })
+
+  it('maps 35% to F (0) — fail', () => {
+    const { letter, points } = percentageToGradePoint(35, cgpa10.scale)
+    expect(letter).toBe('F')
     expect(points).toBe(0)
   })
 })
